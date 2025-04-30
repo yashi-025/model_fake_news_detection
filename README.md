@@ -47,8 +47,10 @@ Fake_News_Detection/
 
 # Setup and Installation
 1) **Clone the repository:**
-```git clone https://github.com/your-username/FakeNewsDetection.git
-cd FakeNewsDetection```
+```
+git clone https://github.com/your-username/FakeNewsDetection.git
+cd FakeNewsDetection
+```
 
 2) **Train the Model** (optional, if you need to retrain):
 Run the generate.py script to train the model and save it as fake_news_model.pkl.
