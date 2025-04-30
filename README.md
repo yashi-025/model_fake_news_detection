@@ -23,9 +23,6 @@ Before running the project, ensure you have the following installed:
   - NLTK
   - Pickle
 
-You can install the required Python libraries using:
-`pip install -r requirements.txt`
-
 # Directory Structure
 The project has the following directory structure:
 ```
@@ -49,12 +46,14 @@ Fake_News_Detection/
 1) **Clone the repository:**
 ```
 git clone https://github.com/your-username/FakeNewsDetection.git
-cd FakeNewsDetection
+cd Fake_News_Detection
 ```
 
 2) **Train the Model** (optional, if you need to retrain):
 Run the generate.py script to train the model and save it as fake_news_model.pkl.
-`python generate.py`
+```
+python generate.py
+```
 The model will be saved in the model/ directory.
 
 
