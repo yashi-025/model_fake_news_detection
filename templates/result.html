@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>📰 Fake News Detector Result</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #fdfcfb, #e2d1c3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .result-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(18px);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            padding: 50px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            animation: fadeIn 0.9s ease-out;
+        }
+
+        .result-text {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #fff;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .FAKE {
+            background: linear-gradient(to right, #ff416c, #ff4b2b);
+            box-shadow: 0 0 25px rgba(255, 65, 108, 0.5);
+        }
+
+        .REAL {
+            background: linear-gradient(to right, #00b09b, #96c93d);
+            box-shadow: 0 0 25px rgba(0, 176, 155, 0.5);
+        }
+
+        .try-again-btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background: #5f27cd;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            box-shadow: 0 8px 20px rgba(95, 39, 205, 0.3);
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .try-again-btn:hover {
+            background: #341f97;
+            transform: scale(1.05);
+        }
+
+        .emoji {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="result-card">
+        <div class="emoji">
+            {% if prediction == "FAKE" %}
+                🚨
+            {% elif prediction == "REAL" %}
+                ✅
+            {% else %}
+                ❓
+            {% endif %}
+        </div>
+        <div class="result-text {{ prediction }}">
+            {% if prediction == "FAKE" %}
+                FAKE NEWS!!
+            {% elif prediction == "REAL" %}
+                REAL NEWS!!
+            {% else %}
+                UNKNOWN RESULT
+            {% endif %}
+        </div>
+        <a href="/" class="try-again-btn">🔁 Wanna try another Headline</a>
+    </div>
+</body>
+</html>
